@@ -10,10 +10,12 @@ public class PlayerController : MonoBehaviour
 	{
 		float x =  Input.GetAxis("Horizontal");
 		float z = Input.GetAxis("Vertical");
+		float y = Input.GetKey(KeyCode.Space)?5:-5;
+			
 
 		Rigidbody rigidbody = GetComponent<Rigidbody>();
 
 		// xとyにspeedを掛ける
-		rigidbody.AddForce(x * speed, 0, z * speed);
+		rigidbody.AddForce(x * speed, y * speed, z * speed);
 	}
 }
